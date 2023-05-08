@@ -35,17 +35,19 @@
  
 
 ### Reference Documentation
+
 #### State change request: Success response is 200 OK
 * Request method: <code>POST</code>
 * URL for state change of a device (if any) associated to a slot: 
     <br>
      <code> http://localhost:8080/api/hub/device/state?signal={signal} </code>
 * Request Header:
-    <br> <code> remoteModel: A
+    <br> <code> remoteModel: A </code>
+    
+<br> e.g., CURL request: slot no - 4, turn on device : (100 * 4 + 1)  
+<br>      curl --location --request POST 'http://localhost:8080/api/hub/device/state?signal=401' \
+        --header 'remoteModel: A'
 
-e.g., CURL request: slot no - 4, turn on device : (100 * 4 + 1) <br> 
-curl --location --request POST 'http://localhost:8080/api/hub/device/state?signal=401' \
---header 'remoteModel: A'
 
 #### Undo request: Success response is 200 OK, Invalid undo response is 400 Bad Request
 * Request method: <code>POST</code>
@@ -53,14 +55,14 @@ curl --location --request POST 'http://localhost:8080/api/hub/device/state?signa
     <br>
      <code> http://localhost:8080/api/hub/action/undo </code>
 * Request Header:
-    <br> <code> remoteModel: A
+    <br> <code> remoteModel: A </code>
 
-e.g., CURL request: <br>
+<br> e.g., CURL request: <br>
 curl --location --request POST 'http://localhost:8080/api/hub/action/undo' \
 --header 'remoteModel: A'
 
 
-Coding overview:
+### Coding overview:
 * Spring boot application entry point: CloudHomeAutomationApplication
 * The main servlet controller for API: <code>RemoteRequestController</code>, the base URI is defined in application.properties
 * Configuration of slots, devices, and their mapping are placed in 'dao' sub-package. Same with persistent state to execute undo request.
