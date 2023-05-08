@@ -71,3 +71,9 @@ curl --location --request POST 'http://localhost:8080/api/hub/action/undo' \
 * GarageDoor, LivingRoomLight, DishWasher are subclasses of Device
 * RemoteA implements RemoteAdapter
 * State change responses will be written to console log.
+
+### Design
+* Designs are in src/resources/design folder, with JPG snaps and original design files.
+* Designs are generated from https://www.diagrams.net/.
+
+
