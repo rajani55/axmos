@@ -7,6 +7,7 @@
 ### Getting Started 
 * This application is developed using spring boot with embedded Tomcat server and Maven
 * Maven Command to start the application on localhost:8080 - 
+<br><code> mvnw package </code>
 <br><code> mvnw spring-boot:start </code>
 
 ###Assumptions
